@@ -13,9 +13,6 @@ use pocketmine\event\player\PlayerJoinEvent;
 
 class EventListener implements Listener {
 
-//    public EventListener(Hello $hello): void {
-//        $this->$hello = $hello();
-//    }
 
     /**
      * @param PlayerJoinEvent $event
