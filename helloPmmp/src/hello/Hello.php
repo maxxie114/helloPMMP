@@ -18,7 +18,7 @@ class Hello extends PluginBase {
     }
 
     public function onEnable(): void {
-        $this->getServer()->getPluginManager()->registerEvents(new EventListener(), $this);
+        $this->getServer()->getPluginManager()->registerEvents(new EventListener($this),$this);
         $this->getLogger()->info(TextFormat::AQUA."hello world!!!");
     }
 

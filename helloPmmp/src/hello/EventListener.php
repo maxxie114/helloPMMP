@@ -10,9 +10,17 @@ namespace hello;
 
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
+use pocketmine\event\player\PlayerQuitEvent;
 
 class EventListener implements Listener {
 
+    /* @var hello */
+    private $hello;
+
+
+    public function __construct(Hello $hello) {
+        $this->hello = $hello;
+    }
 
     /**
      * @param PlayerJoinEvent $event
@@ -21,5 +29,12 @@ class EventListener implements Listener {
         //$event->getPlayer() = new Player();
         $event->getPlayer()->sendMessage("hello world!!!!!");
 
+    }
+
+    /**
+     * @param PlayerQuitEvent $event
+     */
+    public function onQuit(PlayerQuitEvent $event): void {
+        $this->hello->getServer()->broadcastMessage($event->getPlayer()->getName()."Just left");
     }
 }
