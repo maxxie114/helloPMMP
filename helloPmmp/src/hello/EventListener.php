@@ -35,6 +35,6 @@ class EventListener implements Listener {
      * @param PlayerQuitEvent $event
      */
     public function onQuit(PlayerQuitEvent $event): void {
-        $this->hello->getServer()->broadcastMessage($event->getPlayer()->getName()."Just left");
+        $this->hello->getServer()->broadcastMessage($event->getPlayer()->getName()." Just left");
     }
 }
